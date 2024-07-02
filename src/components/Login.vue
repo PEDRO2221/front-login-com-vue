@@ -47,9 +47,10 @@ export default {
       const keys = Object.keys(errors);
       const firstKey = keys[0];
       const firstMessage = errors[firstKey]
-      alert(firstMessage);
+      alert(firstMessage)
+     
       console.log(errors)
-    }
+    },
   },
   data() {
     return {
