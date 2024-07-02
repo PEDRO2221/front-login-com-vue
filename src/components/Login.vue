@@ -1,4 +1,5 @@
 <template>
+  <notifications position="top center" />
   <div class="background">
     <div class="card login-component">
       <h2 class="text-body-secondary">Login</h2>
@@ -40,15 +41,21 @@ export default {
   },
   methods: {
     onSubmit(values: any) {
-      // console.log(JSON.stringify(values, null, 2));
-      alert("passei")
+      this.$notify({
+        title: "Login",
+        text:'Seja bem vindo !',
+        type: 'sucess',
+      });
     },
     onInvalidSubmit({ values, errors, results }: any) {
       const keys = Object.keys(errors);
       const firstKey = keys[0];
       const firstMessage = errors[firstKey]
-      alert(firstMessage)
-     
+      this.$notify({
+        title: firstMessage,
+        type: 'error',
+      });
+
       console.log(errors)
     },
   },
